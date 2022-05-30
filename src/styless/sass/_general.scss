@@ -1,0 +1,73 @@
+$kurale: 'Kurale', serif;
+$os: 'Open Sans', sans-serif;
+$wrap: 1440px;
+$container: 1230px;
+$mc: 0 auto;
+$yellow: #E8C300;
+$white: #fff;
+$color: #000;
+$text: 18px;
+
+@mixin flex($jc, $ai) {
+  display: flex;
+  //перенесется на след строку если дойдет до конца
+  flex-wrap: wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin line{
+  content: "";
+  display: block;
+  background: $yellow;
+  width: 60px;
+  height: 5px;
+  border-radius: 40px;
+  margin: $mc;
+  margin-top: 22px;
+  margin-bottom: 35px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+body{
+  background: $white !important;
+  font-size: $text;
+  font-family: $os;
+  font-family: $os;
+  color: $color;
+}
+.wrapper{
+  max-width: $wrap;
+  margin: $mc;
+}
+.container{
+  padding: 0 15px;
+  max-width: $container;
+  margin: $mc;
+}
+.circle{
+  width: 250px;
+  height: 250px;
+  border: 20px solid $yellow;
+  border-radius: 50%;
+  top: 50%;
+}
+section h2{
+  font-family: $kurale;
+  font-size: 42px;
+  font-weight: 400;
+  &::after{
+    @include line;
+  }
+}
+section p{
+  line-height: 150%;
+  margin-bottom: 25px;
+  .intro{
+        color: rgba(0, 0, 0, 1);
+    }
+}

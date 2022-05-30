@@ -1,0 +1,151 @@
+.home {
+  min-width: 800px;
+  position: relative;
+  &__video {
+    width: 1440px;
+    height: 800px;
+    position: absolute;
+    //чтоб растягивалась
+    object-fit: cover;
+  }
+  //fill all field screen
+  &__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    //для того чтоб растянутый текст был поверх фона
+    z-index: 2;
+  }
+ // пленка, темный фон поверх картинки, content is neccesary
+  &::after{
+    content: "";
+    position: absolute;
+    width: $wrap;
+    height: 800px;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
+
+.top-menu__list{
+ @include flex(center, center)
+
+}
+.top-menu__item{
+  margin: 0 5px;
+  a{
+    font-weight: 700;
+    font-size: 12px;
+    color: $white;
+    text-transform: uppercase;
+    display:block;
+    transition: 0.3s;
+    padding: 40px 25px;
+    border-top: 5px solid transparent;
+    &:hover{
+      color: $yellow;
+      border-top: 5px solid $yellow;
+    }
+  }
+}
+.logo{
+  margin: 0 60px;
+  img{
+    position: relative;
+    top: 15px;
+  }
+}
+
+.home__container-center {
+  margin-left: 135px;
+  margin-right: 135px;
+  @include flex(space-between, flex-start);
+  margin-top: 177px;
+
+}
+
+.socials {
+  margin-top: 20px;
+  width: 62px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 62px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-top: 33px;
+    transition: 0.3s;
+    &:hover{
+      background: #E8C300;
+    }
+  }
+}
+.home__text{
+  text-align: center;
+
+  h6{
+    color: #fff;
+    font-size: 18px;
+  }
+  h1{
+    font-family: 'Kurale';
+    font-weight: normal;
+    font-size: 72px;
+    font-weight: 400;
+    margin-top: 25px;
+    text-transform: lowercase;
+    color: $yellow;
+    &::after{
+      @include line;
+    }
+  }
+}
+.home__btns{
+  margin-top: 60px;
+  margin-bottom: 80px;
+  a{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    //чтоб текст по центру был
+    line-height: 60px;
+    color: $white;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 20px 20px;
+    &:hover{
+      background: $yellow;
+    }
+  }
+  .btn-order{
+    background: $yellow;
+    border: none;
+    &:hover{
+      background: lighten($yellow, 10%);
+    }
+  }
+}
+.arrow__about{
+  display: block;
+  width: 62px;
+  height: 62px;
+  margin: $mc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: black;
+}
+.time-work{
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  transform: rotate(-90deg);
+  margin-top: 135px;
+  margin-left: -75px;
+}

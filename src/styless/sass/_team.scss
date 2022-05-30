@@ -1,0 +1,35 @@
+.team{
+  background: url(../../img/bg_team.jpg)  no-repeat;
+  padding: 44px 0 135px;
+  h6{
+    color: $white;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5em;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+.team__container{
+  @include flex(space-between, center);
+  padding-top: 50px;
+}
+.team__text{
+  padding-bottom: 260px;
+  width: 50%;
+  max-width: 600px;
+  color: $white;
+  text-align: center;
+}
+.bold{
+    font-weight: 700;
+  }
+.team__img{
+  width: 50%;
+  height: auto;
+  max-width: 500px;
+  .circle{
+    left:0;
+    transform: translate(-30%, -160%)
+  }
+}
